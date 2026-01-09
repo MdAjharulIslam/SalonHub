@@ -82,7 +82,7 @@ export const getUserById = async (req, res) => {
 
     const user = await User.findById(id);
     if (!user) {
-      return res.json({ success: false, message: "user not found" });
+      return res.status(400).json({ success: false, message: "user not found" });
     }
     return res.json({
       success: true,
