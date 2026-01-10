@@ -14,6 +14,14 @@ const serviceSchema = new mongoose.Schema({
         type:Number,
         required:true
     },
+    category:{
+        type:String,
+        required:true
+    },
+    isAvailable:{
+        type:Boolean,
+        default:true
+    },
     duration:{
         type:String,
         required:true
