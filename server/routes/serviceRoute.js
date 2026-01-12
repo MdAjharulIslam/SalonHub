@@ -6,10 +6,10 @@ import adminAuth from "../middleware/adminAuth.js";
 
 const serviceRouter = express.Router();
 
-serviceRouter.post('/add',upload.single("image"), addService);
+serviceRouter.post('/add',adminAuth,upload.single("image"), addService);
 serviceRouter.get('/getAllService',  getAllService)
 serviceRouter.get('/:id', getSingleService)
-serviceRouter.post('/toggle/:id', toggleService)
-serviceRouter.post('/delete/:id', deleteService)
+serviceRouter.post('/toggle/:id',adminAuth, toggleService)
+serviceRouter.post('/delete/:id',adminAuth, deleteService)
 
 export default serviceRouter;

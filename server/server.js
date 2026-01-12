@@ -9,6 +9,7 @@ import connectDB from "./config/db.js"
 import userRouter from "./routes/userRoute.js"
 import serviceRouter from "./routes/serviceRoute.js"
 import adminRouter from "./routes/adminRoute.js"
+import bookingRouter from "./routes/bookingRoute.js"
 
 
 const app = express()
@@ -27,6 +28,7 @@ app.get('/',(req, res)=>{
 app.use('/api/user',userRouter);
 app.use('/api/service',serviceRouter)
 app.use('/api/admin', adminRouter)
+app.use('/api/booking',bookingRouter)
 
 
 app.listen(PORT, ()=>{
