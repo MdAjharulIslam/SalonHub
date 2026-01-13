@@ -37,6 +37,9 @@ const Navbar: React.FC = () => {
         <NavLink className="text-xl" to="/about">
           About
         </NavLink>
+        <NavLink className="text-xl" to="/contact">
+          Contact Us
+        </NavLink>
 
         <div className="hidden lg:flex items-center text-sm gap-2 border border-gray-400 px-3 rounded-full">
           <input
@@ -108,6 +111,13 @@ const Navbar: React.FC = () => {
               About
             </NavLink>
 
+            <NavLink
+              className="text-lg hover:text-primary"
+              to="/contact"
+              onClick={() => setMobileOpen(false)}
+            >
+              Contact Us
+            </NavLink>
             {!login ? (
               <button
                 className="text-lg bg-primary hover:bg-primary-dull text-black px-6 py-2 rounded-full"

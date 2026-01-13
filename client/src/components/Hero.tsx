@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-black/10 rounded-3xl"></div>
 
-              <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 md:px-12">
+              <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 md:px-12 gap-2">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 drop-shadow-lg">
                   {slide.title}
                 </h2>
