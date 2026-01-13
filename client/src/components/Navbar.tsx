@@ -4,8 +4,8 @@ import { assets } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
 
 const Navbar: React.FC = () => {
-  const {login, setLogin, showLogin, setShowLogin} = useAppContext();
-  const [search, setSearch] = useState<string>("");
+  const {login, setLogin, showLogin, setShowLogin,search,setSearch} = useAppContext();
+  
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
 
   const navigate = useNavigate();
@@ -122,7 +122,7 @@ const Navbar: React.FC = () => {
               <button
                 className="text-lg bg-primary hover:bg-primary-dull text-black px-6 py-2 rounded-full"
                 onClick={() => {
-                  setLogin(!login);
+                  setShowLogin(true);
                   setMobileOpen(false);
                 }}
               >

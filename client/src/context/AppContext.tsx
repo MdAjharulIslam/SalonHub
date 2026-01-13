@@ -5,6 +5,8 @@ interface AppContextType {
   setLogin: (value: boolean) => void;
   showLogin: boolean;
   setShowLogin: (value: boolean) => void;
+  search:string,
+  setSearch:(value:string)=>void;
 }
 
 export const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -18,12 +20,15 @@ export const AppContextProvider: React.FC<AppContextProviderProps> = ({
 }) => {
   const [login, setLogin] = useState<boolean>(false);
   const [showLogin, setShowLogin] = useState<boolean>(false);
+  const [search, setSearch] = useState<string>('')
 
   const value: AppContextType = {
     login,
     setLogin,
     showLogin,
     setShowLogin,
+    search,
+    setSearch
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

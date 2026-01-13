@@ -9,13 +9,14 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState<string>("");
 
   const navigate = useNavigate();
-  const { setShowLogin } = useAppContext();
+  const { setShowLogin,setLogin } = useAppContext();
 
   const onSubmitHandler = async (event: FormEvent<HTMLFormElement>) => {
     try {
       event.preventDefault();
       navigate("/")
       setShowLogin(false)
+      setLogin(true)
       // login/register logic here
     } catch (error) {
         console.error(error.message)
