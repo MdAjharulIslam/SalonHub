@@ -15,7 +15,7 @@ const NewsLetter:React.FC = () => {
   };
 
   return (
-    <footer className="bg-gray-300 py-24 px-4">
+    <footer className="bg-gray-300 py-24 px-4 mt-16 sm:mt-20 md:mt-24 lg:mt-32">
       <div className="max-w-6xl mx-auto">
 
         

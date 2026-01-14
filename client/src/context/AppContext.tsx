@@ -1,43 +1,107 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import axios from "axios";
+import toast from "react-hot-toast";
 
+/* ---------- AXIOS ---------- */
+axios.defaults.baseURL =
+  import.meta.env.VITE_BASE_URL || "http://localhost:4000";
+
+/* ---------- TYPES ---------- */
+export interface ServiceType {
+  _id: string;
+  name: string;
+  price: number;
+  category: string;
+  duration: string;
+  image: string;
+  isAvailable: boolean;
+  description: string;
+}
+
+/* ---------- CONTEXT TYPE ---------- */
 interface AppContextType {
+  // auth / ui
   login: boolean;
   setLogin: (value: boolean) => void;
   showLogin: boolean;
   setShowLogin: (value: boolean) => void;
-  search:string,
-  setSearch:(value:string)=>void;
+  search: string;
+  setSearch: (value: string) => void;
+  token: string | null;
+  setToken: (value: string | null) => void;
+
+  // services
+  allService: ServiceType[];
+  loading: boolean;
 }
 
-export const AppContext = createContext<AppContextType | undefined>(undefined);
+/* ---------- CONTEXT ---------- */
+const AppContext = createContext<AppContextType | undefined>(undefined);
 
-interface AppContextProviderProps {
-  children: ReactNode;
-}
-
-export const AppContextProvider: React.FC<AppContextProviderProps> = ({
-  children,
-}) => {
-  const [login, setLogin] = useState<boolean>(false);
+/* ---------- PROVIDER ---------- */
+export const AppContextProvider = ({ children }: { children: ReactNode }) => {
+  // auth / ui
+  const [login, setLogin] = useState<boolean>(!!localStorage.getItem("token"));
   const [showLogin, setShowLogin] = useState<boolean>(false);
-  const [search, setSearch] = useState<string>('')
+  const [search, setSearch] = useState<string>("");
+  const [token, setToken] = useState<string | null>(
+    localStorage.getItem("token")
+  );
 
-  const value: AppContextType = {
-    login,
-    setLogin,
-    showLogin,
-    setShowLogin,
-    search,
-    setSearch
-  };
+  // services
+  const [allService, setAllService] = useState<ServiceType[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
-  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
+  /* ---------- FETCH SERVICES ---------- */
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        setLoading(true);
+        const { data } = await axios.get("/api/service/getAllService");
+
+      
+
+        if (data.success) {
+          setAllService(data.allService || []);
+        } else {
+          toast.error("Failed to load services");
+        }
+      } catch (err) {
+        console.error("Context fetch error:", err);
+        toast.error("Server error");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchServices();
+  }, []);
+
+  return (
+    <AppContext.Provider
+      value={{
+        login,
+        setLogin,
+        showLogin,
+        setShowLogin,
+        search,
+        setSearch,
+        token,
+        setToken,
+        allService,
+        loading,
+      }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
 };
 
-export const useAppContext = (): AppContextType => {
+/* ---------- HOOK ---------- */
+export const useAppContext = () => {
   const context = useContext(AppContext);
   if (!context) {
-    throw new Error("useAppContext must be used within an AppContextProvider");
+    throw new Error("useAppContext must be used within AppContextProvider");
   }
   return context;
 };

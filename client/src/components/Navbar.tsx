@@ -2,9 +2,10 @@ import React, { useState, ChangeEvent } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
+import toast from "react-hot-toast";
 
 const Navbar: React.FC = () => {
-  const {login, setLogin, showLogin, setShowLogin,search,setSearch} = useAppContext();
+  const {login, setLogin, showLogin, setShowLogin,search,setSearch, token, setToken} = useAppContext();
   
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
 
@@ -13,6 +14,20 @@ const Navbar: React.FC = () => {
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
+
+
+ const handleLogout = () => {
+  
+  localStorage.removeItem("token");
+  setToken(null);
+  
+ 
+  setLogin(false);
+  navigate('/')
+  
+  toast.success("Logged out successfully!");
+};
+
 
   return (
     <nav className="w-full bg-gray-300 px-6 md:px-16 lg:px-24 xl:px-32 h-fit flex items-center justify-between relative">
@@ -28,6 +43,17 @@ const Navbar: React.FC = () => {
 
       
       <div className="hidden md:flex gap-10 items-center">
+
+        <div className="hidden md:flex items-center text-sm gap-2 border border-gray-400 px-3 rounded-full">
+          <input
+            type="text"
+            placeholder="Search products"
+            value={search}
+            onChange={handleSearchChange}
+            className="py-1.5 w-full bg-transparent outline-none placeholder-gray-500"
+          />
+          <img src={assets.search_icon} alt="search" className="w-4 h-4" />
+        </div>
         <NavLink className="text-xl" to="/">
           Home
         </NavLink>
@@ -41,16 +67,7 @@ const Navbar: React.FC = () => {
           Contact Us
         </NavLink>
 
-        <div className="hidden lg:flex items-center text-sm gap-2 border border-gray-400 px-3 rounded-full">
-          <input
-            type="text"
-            placeholder="Search products"
-            value={search}
-            onChange={handleSearchChange}
-            className="py-1.5 w-full bg-transparent outline-none placeholder-gray-500"
-          />
-          <img src={assets.search_icon} alt="search" className="w-4 h-4" />
-        </div>
+        
 
         {!login ? (
           <button
@@ -68,7 +85,9 @@ const Navbar: React.FC = () => {
               My Bookings
             </li>
             <li
-              onClick={() => setLogin(!login)}
+              onClick={() => {setLogin(!login);
+                 handleLogout()}}
+              
               className="cursor-pointer hover:text-red-500"
             >
               Logout

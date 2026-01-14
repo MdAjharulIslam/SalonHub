@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-[700px] lg:h-[770px] rounded-3xl overflow-hidden shadow-2xl px-5 ">
+    <div className="relative w-full h-[700px] lg:h-[770px] rounded-3xl overflow-hidden shadow-2xl px-10 mb-10">
     
       <div className="absolute top-[-50px] left-[-50px] w-60 h-60 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-[-60px] right-[-40px] w-72 h-72 bg-white/5 rounded-full blur-2xl animate-ping"></div>
@@ -74,7 +74,7 @@ const Hero: React.FC = () => {
 
                 <div className="flex gap-4 flex-wrap justify-center">
                   <button
-                    onClick={() => navigate("/booking")}
+                    onClick={() => navigate("/services")}
                     className="px-6 py-3 bg-pink-500 hover:bg-pink-600 text-white font-bold rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
                   >
                     Book Now
