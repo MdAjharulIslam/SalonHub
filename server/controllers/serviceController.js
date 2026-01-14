@@ -5,8 +5,8 @@ import Service from "../models/Service.js";
 
 export const addService = async (req, res) => {
   try {
-    const { name, price, duration, category } = req.body;
-    if (!name || !price || !duration) {
+    const { name, price, duration, category,description } = req.body;
+    if (!name || !price || !duration || !description) {
       return res.status(400).json({
         success: false,
         message: "All fields are required",
@@ -47,6 +47,7 @@ export const addService = async (req, res) => {
       price,
       duration,
       category,
+      description,
 
       image: optimizedImageUrl,
     });
@@ -57,6 +58,7 @@ export const addService = async (req, res) => {
       price,
       duration,
       category,
+      description,
       isAvailable: newService.isAvailable,
       image: optimizedImageUrl,
     });
