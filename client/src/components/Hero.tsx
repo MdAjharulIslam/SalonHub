@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useNavigate } from "react-router-dom";
 
-// Replace with your 6 salon images
+
 import banner1 from "../assets/banner1.png";
 import banner2 from "../assets/banner2.png";
 import banner3 from "../assets/banner3.png";
@@ -75,7 +75,7 @@ const Hero: React.FC = () => {
                 <div className="flex gap-4 flex-wrap justify-center">
                   <button
                     onClick={() => navigate("/services")}
-                    className="px-6 py-3 bg-pink-500 hover:bg-pink-600 text-white font-bold rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
+                    className="px-6 py-3 bg-gradient-to-r from-primary to-purple-600 hover:bg-pink-600 text-white font-bold rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
                   >
                     Book Now
                   </button>
@@ -101,7 +101,7 @@ const Hero: React.FC = () => {
                     />
                     <button
                       onClick={handleSearch}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-2 bg-pink-500 hover:bg-pink-600 text-white rounded-full font-semibold text-sm transition-all duration-300"
+                      className="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-2 bg-gradient-to-r from-primary to-purple-600  text-white rounded-full font-semibold text-sm transition-all duration-300"
                     >
                       Search
                     </button>

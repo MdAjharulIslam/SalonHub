@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
 
         {!login ? (
           <button
-            className="text-xl bg-primary hover:bg-primary-dull px-6 py-2 rounded-full"
+            className="text-xl bg-gradient-to-r from-primary to-purple-600 px-6 py-2 rounded-full"
             onClick={() => setShowLogin(true)}
           >
             Login
@@ -99,7 +99,7 @@ const Navbar: React.FC = () => {
       
       <div className="md:hidden relative">
         <button
-          className="bg-primary px-4 py-2 rounded-full text-black hover:bg-primary-dull"
+          className="bg-gradient-to-r from-primary to-purple-600 px-4 py-2 rounded-full text-black hover:bg-primary-dull"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           Menu
@@ -139,7 +139,7 @@ const Navbar: React.FC = () => {
             </NavLink>
             {!login ? (
               <button
-                className="text-lg bg-primary hover:bg-primary-dull text-black px-6 py-2 rounded-full"
+                className="text-lg bg-gradient-to-r from-primary to-purple-600 text-black px-6 py-2 rounded-full"
                 onClick={() => {
                   setShowLogin(true);
                   setMobileOpen(false);

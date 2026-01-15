@@ -44,7 +44,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
 
           
-          <span className="absolute bottom-4 left-4 px-3 py-1 text-xs font-semibold bg-primary text-white rounded-full backdrop-blur-sm">
+          <span className="absolute bottom-4 left-4 px-3 py-1 text-xs font-semibold bg-gradient-to-r from-primary to-purple-600 text-white rounded-full backdrop-blur-sm">
             {category}
           </span>
 
@@ -82,7 +82,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             className={`w-full mt-3 py-2 rounded-xl text-sm font-semibold transition
               ${
                 isAvailable
-                  ? "bg-primary hover:bg-primary-dull text-white"
+                  ? "bg-gradient-to-r from-primary to-purple-600 hover:bg-primary-dull text-white"
                   : "bg-gray-300 text-gray-500 cursor-not-allowed"
               }`}
           >

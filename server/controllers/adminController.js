@@ -1,59 +1,66 @@
 import express from "express";
-import jwt from "jsonwebtoken"
+import jwt from "jsonwebtoken";
 import User from "../models/User.js";
-export const adminLogin = async(req, res)=>{
-    try {
-        const { email,  password} = req.body;
-        if(!email || !password){
-            return res.json({
-                success:false,
-                message:"All field are required"
-            })
-        }
-        if(email !=process.env.ADMIN_EMAIL || password !=process.env.ADMIN_PASSWORD){
-            return res.json({
-                success:false,
-                message:"Invalid email or password"
-            })
-        }
-
-        const token = jwt.sign({email}, process.env.JWT_SECRET, { expiresIn: "7d"} )
-
-        return res.json({
-            success:true,
-            message:"admin login successfully",
-            token
-        })
-
-    } catch (error) {
-        return res.json({
-            success:false,
-            message:"inernal server error in admin "
-        })
+import Service from "../models/Service.js";
+import Booking from "../models/Booking.js";
+export const adminLogin = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return res.json({
+        success: false,
+        message: "All field are required",
+      });
     }
-}
-
-export const getAllUser = async (req, res)=>{
-    try {
-        const allUser = await User.find().select("-password")
-
-        if(allUser.length === 0){
-            return res.json({
-                success:false,
-                message:"no user found"
-            })
-        }
-
-
-        return res.json({
-            success:true,
-            count:allUser.length,
-            allUser
-        })
-    } catch (error) {
-          return res.json({
-            success:false,
-            message:"inernal server error in admin "
-        })
+    if (
+      email != process.env.ADMIN_EMAIL ||
+      password != process.env.ADMIN_PASSWORD
+    ) {
+      return res.json({
+        success: false,
+        message: "Invalid email or password",
+      });
     }
-}
+
+    const token = jwt.sign({ email }, process.env.JWT_SECRET, {
+      expiresIn: "7d",
+    });
+
+    return res.json({
+      success: true,
+      message: "admin login successfully",
+      token,
+    });
+  } catch (error) {
+    return res.json({
+      success: false,
+      message: "inernal server error in admin ",
+    });
+  }
+};
+
+
+
+
+export const getAllDashboard = async (req, res) => {
+  try {
+    const userCount = await User.countDocuments();
+    const serviceCount = await Service.countDocuments();
+    const totalBooking = await Booking.countDocuments();
+    const pendingBooking = await Booking.countDocuments({ status: "Pending" });
+
+    return res.json({
+      success: true,
+      user: userCount,
+      service: serviceCount,
+      allBooking: totalBooking,
+      pendingBooking,
+    });
+
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error in admin",
+    });
+  }
+};

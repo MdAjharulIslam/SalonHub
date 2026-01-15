@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState, ReactNode } from "react
 import axios from "axios";
 import toast from "react-hot-toast";
 
-/* ---------- AXIOS ---------- */
+
 axios.defaults.baseURL =
   import.meta.env.VITE_BASE_URL || "http://localhost:4000";
 

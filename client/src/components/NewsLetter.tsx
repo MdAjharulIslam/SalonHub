@@ -15,7 +15,7 @@ const NewsLetter:React.FC = () => {
   };
 
   return (
-    <footer className="bg-gray-300 py-24 px-4 mt-16 sm:mt-20 md:mt-24 lg:mt-32">
+    <footer className="bg-[#E5E7EB] py-24 px-4  ">
       <div className="max-w-6xl mx-auto">
 
         
@@ -24,14 +24,14 @@ const NewsLetter:React.FC = () => {
 
            
             <div className="space-y-6">
-              <span className="inline-flex items-center text-xs font-semibold tracking-wider uppercase text-primary bg-primary/10 px-4 py-1.5 rounded-full">
+              <span className="inline-flex items-center text-xs font-semibold tracking-wider uppercase text-black bg-gradient-to-r from-primary to-purple-600 px-4 py-1.5 rounded-full">
                 Newsletter
               </span>
 
               <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 leading-snug">
                 Stay informed with
                 <span className="block text-primary-dull mt-1">
-                  SalonHub insights
+                  SalonHub <span className="text-purple-600">insights</span> 
                 </span>
               </h2>
 
@@ -72,7 +72,7 @@ const NewsLetter:React.FC = () => {
                 <button
                   onClick={handleSubmit}
                   disabled={isSubmitted}
-                  className="w-full bg-primary hover:bg-primary-dull disabled:bg-primary text-white py-3 rounded-xl font-medium transition flex items-center justify-center gap-2"
+                  className="w-full bg-gradient-to-r from-primary to-purple-600 disabled:bg-primary text-white py-3 rounded-xl font-medium transition flex items-center justify-center gap-2"
                 >
                   {isSubmitted ? (
                     <>

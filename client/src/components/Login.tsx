@@ -54,7 +54,7 @@ const Login: React.FC = () => {
         onClick={(e) => e.stopPropagation()}
         className="flex flex-col sm:flex-row w-80 sm:w-[700px] rounded-xl shadow-2xl overflow-hidden bg-white"
       >
-        {/* Left side: Animated Welcome */}
+       
         <div className="hidden sm:flex flex-col justify-center items-center bg-gradient-to-br from-purple-400 via-pink-400 to-red-400 w-full sm:w-1/2 p-8 text-white animate-fadeIn">
           <h2 className="text-3xl font-bold mb-4">Welcome to SalonHub!</h2>
           <p className="text-center text-lg animate-pulse">
@@ -63,7 +63,7 @@ const Login: React.FC = () => {
           <div className="mt-6 w-32 h-32 rounded-full bg-white/20 animate-bounce" />
         </div>
 
-        {/* Right side: Form */}
+        
         <form
           onSubmit={onSubmitHandler}
           className="flex flex-col gap-5 w-full sm:w-1/2 p-8 bg-white"

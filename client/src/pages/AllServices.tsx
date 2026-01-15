@@ -20,7 +20,7 @@ const AllServices: React.FC = () => {
       <Title title="All Services" subTitle="Your favorite services" />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {allService.filter((service) => service.isAvailable).map(service => (
+        {allService.map(service => (
           <Link key={service._id} to={`/service/${service._id}`}>
             <ServiceCard {...service} />
           </Link>
