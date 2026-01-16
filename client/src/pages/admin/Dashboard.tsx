@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import {
   FiHome,
   FiPackage,
@@ -12,7 +12,13 @@ import {
 
 const Dashboard: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
+const navigate = useNavigate()
 
+  const handleLogout = async ()=>{
+    localStorage.removeItem("adminToken")
+    navigate("/admin/login")
+    
+  }
   return (
     <div className="flex h-screen bg-gray-100 overflow-hidden">
 
@@ -101,11 +107,15 @@ const Dashboard: React.FC = () => {
           <h2 className="text-lg sm:text-xl font-semibold">Dashboard</h2>
 
           
+          <button onClick={handleLogout} className="px-4 py-2 bg-gray-200 rounded-2xl">LogOut</button>
+
           <Link
             to="/"
             className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg bg-white text-primary font-medium hover:bg-gray-100 transition-colors text-sm sm:text-base"
           >
+            
             <FiArrowLeft size={18} />
+            
             <span className="hidden sm:inline">Go to Site</span>
             <span className="sm:hidden">Home</span>
           </Link>

@@ -52,7 +52,7 @@ export const getAllBooking = async (req, res) => {
   try {
     const allBooking = await Booking.find()
       .populate("customer", "name email")
-      .populate("service");
+      .populate("service").sort({ createdAt: -1 });;
 
     if (allBooking.length === 0) {
       return res.json({
@@ -78,7 +78,7 @@ export const getBookingByUser = async (req, res) => {
   try {
     const userId = req.userId;
 
-    const booking = await Booking.find({ customer: userId }).populate("service");;
+    const booking = await Booking.find({ customer: userId }).populate("service").sort({ createdAt: -1 });
     if (booking.length === 0) {
       return res.json({
         success: false,
@@ -129,6 +129,8 @@ export const manageBooking = async (req, res) => {
   }
 };
 
+
+//by user
 export const cancelBooking = async (req, res) => {
   try {
     const { bookingId } = req.params;

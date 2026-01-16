@@ -32,6 +32,7 @@ interface AppContextType {
 
   // services
   allService: ServiceType[];
+setAllService: React.Dispatch<React.SetStateAction<ServiceType[]>>;
   loading: boolean;
 }
 
@@ -89,6 +90,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
         token,
         setToken,
         allService,
+        setAllService,
         loading,
       }}
     >

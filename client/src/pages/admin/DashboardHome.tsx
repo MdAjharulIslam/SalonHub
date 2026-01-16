@@ -6,6 +6,8 @@ interface DashboardStats {
  allBooking: number;
   pendingBooking: number;
   user: number;
+      totalServices:string[];
+
 }
 
 const DashboardHome: React.FC = () => {
@@ -14,13 +16,15 @@ const DashboardHome: React.FC = () => {
     allBooking: 0,
     pendingBooking: 0,
     user: 0,
+    totalServices :['']
+
   });
 
   const fetchDashboardStats = async () => {
     try {
       const { data } = await axios.get("/api/admin/dashboard", {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
         },
       });
 
@@ -30,6 +34,9 @@ const DashboardHome: React.FC = () => {
           allBooking: data.allBooking,
           user: data.user,
           pendingBooking: data.pendingBooking, 
+          totalServices:data.totalServices
+
+
         });
       }
     } catch (error) {
@@ -72,6 +79,7 @@ const DashboardHome: React.FC = () => {
         </p>
       </div>
 
+     
 
 
 

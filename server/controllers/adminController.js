@@ -48,6 +48,7 @@ export const getAllDashboard = async (req, res) => {
     const serviceCount = await Service.countDocuments();
     const totalBooking = await Booking.countDocuments();
     const pendingBooking = await Booking.countDocuments({ status: "Pending" });
+    const totalServices = await Service.findOne();
 
     return res.json({
       success: true,
@@ -55,6 +56,7 @@ export const getAllDashboard = async (req, res) => {
       service: serviceCount,
       allBooking: totalBooking,
       pendingBooking,
+      totalServices
     });
 
   } catch (error) {
