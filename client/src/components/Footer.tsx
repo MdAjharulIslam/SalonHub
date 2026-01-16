@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { assets } from "../assets/assets";
 
 const Footer = () => {
@@ -77,6 +78,12 @@ const Footer = () => {
         </div>
 
       </div>
+       <Link to='/admin/login'
+                  className="text-xl bg-gradient-to-r from-primary to-purple-600 px-6 py-2 rounded-full"
+                  
+                >
+                 Admin Login
+                </Link>
     </footer>
   );
 };

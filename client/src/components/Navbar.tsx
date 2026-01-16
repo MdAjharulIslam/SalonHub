@@ -1,6 +1,6 @@
 import React, { useState,  } from "react";
 import type { ChangeEvent } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import {  NavLink, useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
 import toast from "react-hot-toast";
@@ -95,6 +95,7 @@ const Navbar: React.FC = () => {
             </li>
           </ul>
         )}
+         
       </div>
 
       
