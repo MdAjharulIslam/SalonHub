@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-[700px] lg:h-[770px] rounded-3xl overflow-hidden shadow-2xl px-10 mb-10">
+    <div className="relative w-full h-[500px] md:h-[770px] rounded-3xl overflow-hidden shadow-2xl md:px-10 mb-10">
     
       <div className="absolute top-[-50px] left-[-50px] w-60 h-60 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-[-60px] right-[-40px] w-72 h-72 bg-white/5 rounded-full blur-2xl animate-ping"></div>
