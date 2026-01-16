@@ -34,15 +34,16 @@ const AddService: React.FC = () => {
       [name]: name === "price" ? Number(value) : value,
     }));
   };
+const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const file = e.target.files?.[0];
+  if (!file) return; 
 
-  const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setForm((prev) => ({
-        ...prev,
-        image: e.target.files[0],
-      }));
-    }
-  };
+  setForm((prev) => ({
+    ...prev,
+    image: file,
+  }));
+};
+
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import type { ChangeEvent } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+declare module "swiper/css";
+declare module "swiper/css/navigation";
+declare module "swiper/css/pagination";
 import { useNavigate } from "react-router-dom";
 
 

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import NewsLetter from '../components/NewsLetter'
 import Hero from '../components/Hero'
 import TopRatedServices from '../components/TopRatedServices'
