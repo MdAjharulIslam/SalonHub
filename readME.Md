@@ -1,6 +1,8 @@
 # SalonHub - Salon & Spa Booking Application
 
- [SalonHub link ] https://salonhub-lac.vercel.app   
+ [SalonHub link ] https://salonhub-lac.vercel.app 
+    
+  # Admin login : In the Left buttom of footer has admin login button
 
 **SalonHub** is a modern, responsive, and feature-rich salon and spa booking platform built using the **MERN stack** (MongoDB, Express, React, Node.js). Users can browse services, book appointments, and manage their bookings, while admins can manage services, view all bookings, and control availability.
 
