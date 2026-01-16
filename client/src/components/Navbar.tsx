@@ -6,7 +6,7 @@ import { useAppContext } from "../context/AppContext";
 import toast from "react-hot-toast";
 
 const Navbar: React.FC = () => {
-  const {login, setLogin, showLogin, setShowLogin,search,setSearch, token, setToken} = useAppContext();
+  const {login, setLogin,  setShowLogin,search,setSearch, setToken} = useAppContext();
   
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
 

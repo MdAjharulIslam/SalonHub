@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, type FormEvent } from "react";
+import  { useState, type FormEvent } from "react";
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 

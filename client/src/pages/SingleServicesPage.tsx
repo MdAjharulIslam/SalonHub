@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import React, { useState, useEffect } from 'react'
+import  { useState, useEffect } from 'react'
 import toast from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
 
