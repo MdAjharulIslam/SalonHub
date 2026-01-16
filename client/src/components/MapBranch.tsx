@@ -1,11 +1,13 @@
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { branches } from "../assets/assets"; 
+import { MapContainer, TileLayer, Marker, Popup,  } from "react-leaflet";
+import { branches } from "../assets/assets";
 import L from "leaflet";
 import Title from "./Title";
 import { FiMapPin, FiPhone, FiClock, FiNavigation } from "react-icons/fi";
+import "leaflet/dist/leaflet.css";
 
-delete L.Icon.Default.prototype._getIconUrl;
+// Fix default icon issue in Leaflet
+delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl:
     "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png",
@@ -17,15 +19,13 @@ L.Icon.Default.mergeOptions({
 const MapBranch: React.FC = () => {
   return (
     <div className="relative bg-[#E5E7EB] py-16 overflow-hidden">
-     
       <div className="absolute top-0 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <Title title='Find Us' subTitle="Discover our SalonHub locations across the country" />
+        <Title title="Find Us" subTitle="Discover our SalonHub locations across the country" />
 
         <div className="flex flex-col lg:flex-row gap-8 mt-12">
-        
           <div className="flex-1 relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
             <div className="relative h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
@@ -57,9 +57,7 @@ const MapBranch: React.FC = () => {
             </div>
           </div>
 
-          
           <div className="flex-1 space-y-6">
-            
             <div className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
               <div className="flex items-start gap-4 mb-6">
                 <div className="p-3 bg-primary/10 rounded-2xl">
@@ -87,7 +85,6 @@ const MapBranch: React.FC = () => {
               </button>
             </div>
 
-          
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                 <div className="p-3 bg-green-100 rounded-xl w-fit mb-3">
@@ -106,7 +103,6 @@ const MapBranch: React.FC = () => {
               </div>
             </div>
 
-            
             <div className="bg-gradient-to-r from-primary to-purple-600 p-6 rounded-2xl shadow-xl text-white">
               <div className="flex items-center justify-between">
                 <div>
@@ -121,7 +117,6 @@ const MapBranch: React.FC = () => {
           </div>
         </div>
 
-        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center hover:shadow-xl transition-shadow duration-300">
             <p className="text-4xl font-bold text-primary mb-2">50K+</p>
