@@ -51,7 +51,7 @@ const AllOrders: React.FC = () => {
         `/api/booking/status/${bookingId}`,
         { status: newStatus },
         {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+          headers: { Authorization: `Bearer ${localStorage.getItem("adminToken")}` },
         }
       );
 

@@ -44,11 +44,9 @@ const App: React.FC = () => {
         <Route path="/service/:serviceId/booking" element={<BookingPage />} />
         <Route path="/myBooking" element={<MyBooking />} />
 <Route path="/admin/login" element={<AdminLogin />} />
-
-  {/* Protected Admin Dashboard routes */}
   <Route path="/admin" element={<Dashboard />}>
     <Route index element={<DashboardHome />} />
-    <Route path="dashboard" element={<DashboardHome />} /> {/* optional */}
+    <Route path="dashboard" element={<DashboardHome />} /> 
     <Route path="add-service" element={<AddService />} />
     <Route path="all-services" element={<AllServicesAdmin />} />
     <Route path="all-orders" element={<AllOrders />} />
