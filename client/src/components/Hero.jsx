@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import type { ChangeEvent } from "react";
+import  { ChangeEvent } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-// import "swiper/css";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { useNavigate } from "react-router-dom";
 
 
@@ -15,7 +15,7 @@ import banner4 from "../assets/banner4.png";
 import banner5 from "../assets/banner5.png";
 import banner6 from "../assets/banner6.png";
 
-const Hero: React.FC = () => {
+const Hero = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const navigate = useNavigate();
 
@@ -93,8 +93,8 @@ const Hero: React.FC = () => {
                     <input
                       type="text"
                       value={searchQuery}
-                      onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
-                      onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      onKeyDown={(e) => {
                         if (e.key === "Enter") handleSearch();
                       }}
                       placeholder="Search services..."
