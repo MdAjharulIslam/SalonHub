@@ -1,6 +1,6 @@
 # SalonHub - Salon & Spa Booking Application
 
- [SalonHub link ] https://salonhub-lac.vercel.app 
+ [SalonHub link ] https://salon-hub-lake.vercel.app 
     
   # Admin login : In the Left buttom of footer has admin login button
   ## admin Email : admin@example.com
