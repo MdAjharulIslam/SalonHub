@@ -51,17 +51,7 @@ const Category: React.FC = () => {
         ))}
       </div>
 
-      <div className="flex justify-center mt-16">
-        <Link 
-          to="/service"
-          className="group relative overflow-hidden bg-gradient-to-r from-primary to-purple-600 px-8 py-3 rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-        >
-          <span className="relative z-10 flex items-center gap-2">
-            View All Services
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
-          </span>
-        </Link>
-      </div>
+      
 
     </div>
   );

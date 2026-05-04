@@ -60,17 +60,7 @@ const TopRatedServices: React.FC = () => {
           
         />
 
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary/10 to-purple-600/10 backdrop-blur-sm px-4 py-2 rounded-full border border-primary/20">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
-            </span>
-            <span className="text-xs font-medium bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-              Trending This Week
-            </span>
-          </div>
-        </div>
+        
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mt-8">
