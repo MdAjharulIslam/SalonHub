@@ -4,7 +4,7 @@ import Title from "./Title";
 import { Link } from "react-router-dom";
 
 const Category: React.FC = () => {
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [ setHoveredId] = useState<number | null>(null);
 
   return (
     <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-24 py-16 bg-white">
