@@ -24,7 +24,7 @@ const MapBranch: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Title title="Find Us" subTitle="Discover our SalonHub locations across the country"
-          
+           centered={true}
           />
 
         <div className="flex flex-col lg:flex-row gap-8 mt-12">

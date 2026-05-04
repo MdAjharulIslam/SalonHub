@@ -56,7 +56,7 @@ const TopRatedServices: React.FC = () => {
         <Title
           title="Top Rated Services"
           subTitle="Discover our most loved and requested treatments"
-         
+          centered={true}
           
         />
 
