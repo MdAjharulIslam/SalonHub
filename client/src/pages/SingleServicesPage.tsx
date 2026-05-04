@@ -54,7 +54,7 @@ const SingleServicesPage = () => {
         <div className="md:w-1/2 p-10 flex flex-col justify-between">
           <div>
             <h1 className="text-5xl font-bold text-gray-900 mb-4">{service.name}</h1>
-            <p className="text-md text-gray-500 bg-primary rounded-2xl w-fit px-5 py-1 mb-6 uppercase tracking-wide font-semibold">{service.category}</p>
+            <p className="text-md text-white bg-primary rounded-2xl w-fit px-5 py-1 mb-6 uppercase tracking-wide font-semibold">{service.category}</p>
             <p className="text-gray-700 text-lg leading-relaxed mb-8">{service.description}</p>
           </div>
 

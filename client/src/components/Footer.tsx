@@ -16,7 +16,7 @@ const Footer = () => {
               alt="SalonHub"
               className="h-14 brightness-0 invert"
             />
-            <p className="text-sm leading-relaxed text-gray-400">
+            <p className="text-sm leading-relaxed text-white">
               SalonHub helps you book beauty services easily and confidently.
               Discover top salons, book appointments, and manage your beauty
               routine effortlessly.
