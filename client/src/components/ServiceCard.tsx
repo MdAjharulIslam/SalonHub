@@ -22,10 +22,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       <div
         className="
           w-full max-w-lg
-          rounded-3xl
+          rounded-2xl
           overflow-hidden
           bg-white
-          border border-gray-200
+          border border-gray-100
           shadow-md
           hover:shadow-2xl
           hover:-translate-y-1
@@ -33,61 +33,72 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         "
       >
         
-        <div className="relative">
+        <div className="relative group">
           <img
             src={image}
             alt={name}
-            className="h-64 w-full object-cover"
+            className="h-56 w-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
 
-        
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+         
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
 
           
-          <span className="absolute bottom-4 left-4 px-3 py-1 text-xs font-semibold bg-gradient-to-r from-primary to-purple-600 text-white rounded-full backdrop-blur-sm">
+          <span className="absolute bottom-3 left-3 px-3 py-1 text-xs font-semibold bg-gradient-to-r from-primary to-purple-600 text-white rounded-full shadow-md">
             {category}
           </span>
 
-         
+        
           <span
-            className={`absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full text-white shadow-sm
+            className={`absolute top-3 right-3 px-3 py-1 text-xs font-semibold rounded-full text-white shadow-md backdrop-blur-sm
               ${
                 isAvailable
-                  ? "bg-green-500"
-                  : "bg-red-600"
+                  ? "bg-gradient-to-r from-green-500 to-emerald-600"
+                  : "bg-gradient-to-r from-red-500 to-red-600"
               }`}
           >
             {isAvailable ? "Available" : "Unavailable"}
           </span>
         </div>
 
-        
+        {/* Content Section */}
         <div className="p-5 space-y-3">
-          <h3 className="text-xl font-bold text-gray-900">
+          <h3 className="text-lg font-bold text-gray-900 line-clamp-1">
             {name}
           </h3>
 
-          <div className="flex justify-between items-center text-sm">
-            <span className="flex items-center gap-1 text-gray-600">
-              ⏱ {duration} hr
+          <div className="flex justify-between items-center">
+            <span className="flex items-center gap-1.5 text-sm text-gray-500">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {duration} {parseFloat(duration) > 1 ? "hrs" : "hr"}
             </span>
-            <span className="text-lg font-bold text-primary">
-              ৳ {price}
+            <span className="text-xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+              ৳ {price.toLocaleString()}
             </span>
           </div>
 
-          
+        
           <button
             disabled={!isAvailable}
-            className={`w-full mt-3 py-2 rounded-xl text-sm font-semibold transition
+            className={`w-full mt-3 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300
               ${
                 isAvailable
-                  ? "bg-gradient-to-r from-primary to-purple-600 hover:bg-primary-dull text-white"
-                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                  ? "bg-gradient-to-r from-primary to-purple-600 hover:shadow-lg hover:scale-[1.02] text-white"
+                  : "bg-gray-100 text-gray-400 cursor-not-allowed"
               }`}
           >
-            {isAvailable ? "Book Now" : "Currently Unavailable"}
-            
+            {isAvailable ? (
+              <span className="flex items-center justify-center gap-2">
+                Book Now
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            ) : (
+              "Currently Unavailable"
+            )}
           </button>
         </div>
       </div>

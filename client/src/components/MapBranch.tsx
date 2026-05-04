@@ -23,7 +23,9 @@ const MapBranch: React.FC = () => {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <Title title="Find Us" subTitle="Discover our SalonHub locations across the country" />
+        <Title title="Find Us" subTitle="Discover our SalonHub locations across the country"
+          gradient={true}
+          gradientStyle="primary"/>
 
         <div className="flex flex-col lg:flex-row gap-8 mt-12">
           <div className="flex-1 relative group">
