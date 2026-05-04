@@ -4,14 +4,14 @@ interface TitleProps {
   title: string;
   subTitle: string;
   centered?: boolean;
-  gradient?: boolean;
+  
 }
 
 const Title: React.FC<TitleProps> = ({ 
   title, 
   subTitle, 
   centered = true,
-  gradient = false 
+  
 }) => {
   return (
     <div className={`px-4 pb-12 ${centered ? "text-center" : ""}`}>
