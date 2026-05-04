@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
   
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
-  const [activeTab, setActiveTab] = useState<string>("");
+  const [ setActiveTab] = useState<string>("");
 
   const navigate = useNavigate();
 
@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
     setMobileOpen(false);
   };
 
-  const handleSearchSubmit = (e: React.KeyboardEvent | React.MouseEvent) => {
+  const handleSearchSubmit = ( ) => {
     if (search.trim()) {
       navigate(`/service?search=${encodeURIComponent(search.trim())}`);
     }
