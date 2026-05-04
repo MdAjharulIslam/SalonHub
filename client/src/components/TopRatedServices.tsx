@@ -107,7 +107,7 @@ const TopRatedServices: React.FC = () => {
                 <ServiceCard {...service} />
               </div>
             </div>
-          </Link>
+          </Link> 
         ))}
       </div>
 
