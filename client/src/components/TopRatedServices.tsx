@@ -57,7 +57,7 @@ const TopRatedServices: React.FC = () => {
           title="Top Rated Services"
           subTitle="Discover our most loved and requested treatments"
           gradient={true}
-          gradientStyle="primary"
+          
         />
 
         <div className="flex justify-center mb-8">

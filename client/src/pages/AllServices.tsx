@@ -19,7 +19,7 @@ const AllServices: React.FC = () => {
     <div className="max-w-full px-6 py-5 md:px-24 md:pb-20 ">
       <Title title="All Services" subTitle="Your favorite services" 
         gradient={true}
-          gradientStyle="primary" />
+          />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {allService.map(service => (
