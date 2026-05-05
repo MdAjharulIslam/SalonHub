@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
             <img
               src={assets.logo}
               alt="logo"
-              className="h-24 transition-all duration-300 hover:scale-105"
+              className="h-24 transition-all duration-300 scale-175 hover:scale-185"
             />
           </NavLink>
 
@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
             {!login ? (
               <button
                 onClick={() => setShowLogin(true)}
-                className="bg-primary text-white px-5 py-2 rounded-full"
+                className="bg-gradient-to-r from-primary to-purple-500 text-white px-5 py-2 rounded-full cursor-pointer hover:scale-105 transition-all"
               >
                 Sign In
               </button>

@@ -102,20 +102,19 @@ const Hero: React.FC = () => {
 
   return (
     <div 
-      className="w-full px-4 md:px-8 pt-6 pb-12"
+      className="w-full px-3 sm:px-4 md:px-8 pt-4 sm:pt-6 pb-8 sm:pb-12"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-     
+      {/* Background Decorations */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute -top-40 -right-40 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute -bottom-40 -left-40 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-primary/20 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
-    
-      <div className="relative h-[620px] rounded-3xl overflow-hidden shadow-2xl group">
-
-       
+      {/* Hero Container */}
+      <div className="relative h-[500px] sm:h-[550px] md:h-[620px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl group">
+        {/* Background Images */}
         {slides.map((s, i) => (
           <div
             key={s.id}
@@ -130,79 +129,72 @@ const Hero: React.FC = () => {
           />
         ))}
 
-        
+        {/* Overlays */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-        
+        {/* Content */}
         <div className="relative z-10 h-full flex items-center">
-          <div className="ml-6 md:ml-16 max-w-xl">
-            
-         
-            <div className="overflow-hidden mb-4">
-              <span className="inline-block animate-slide-down text-xs uppercase tracking-[0.2em] text-white/70 font-medium bg-white/10 backdrop-blur-sm px-4 py-1.5 rounded-full">
+          <div className="ml-4 sm:ml-6 md:ml-16 max-w-xl px-2 sm:px-0">
+            {/* Tag */}
+            <div className="overflow-hidden mb-3 sm:mb-4">
+              <span className="inline-block animate-slide-down text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white/70 font-medium bg-white/10 backdrop-blur-sm px-3 sm:px-4 py-1 sm:py-1.5 rounded-full">
                 {slide.tag}
               </span>
             </div>
 
-           
-            <div className="mb-6">
-              <span className="inline-flex items-center gap-2 text-white/50 text-sm">
-                <span className="w-8 h-px bg-gradient-to-r from-primary to-purple-500" />
+            {/* Meta Badge */}
+            <div className="mb-4 sm:mb-6">
+              <span className="inline-flex items-center gap-1 sm:gap-2 text-white/50 text-xs sm:text-sm">
+                <span className="w-6 sm:w-8 h-px bg-gradient-to-r from-primary to-purple-500" />
                 {slide.meta}
               </span>
             </div>
 
-            
-            <h1 className="text-6xl md:text-7xl font-light text-white leading-[1.1] mb-6">
+            {/* Title */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-white leading-[1.2] sm:leading-[1.1] mb-4 sm:mb-6">
               {slide.title}{" "}
               <span className="bg-gradient-to-r from-primary via-purple-400 to-purple-600 bg-clip-text text-transparent font-bold italic">
                 {slide.titleItalic}
               </span>
-              <span className="block font-bold tracking-tight mt-1">
+              <span className="block font-bold tracking-tight mt-0 sm:mt-1">
                 {slide.titleEnd}
               </span>
             </h1>
 
-           
-            <p className="text-white/60 mb-8 text-base md:text-lg leading-relaxed max-w-md backdrop-blur-sm">
+            {/* Subtitle */}
+            <p className="text-white/60 mb-6 sm:mb-8 text-sm sm:text-base md:text-lg leading-relaxed max-w-md backdrop-blur-sm">
               {slide.subtitle}
             </p>
 
-            
-            <div className="flex flex-wrap gap-4 mb-8">
+            {/* Buttons */}
+            <div className="flex flex-wrap gap-3 sm:gap-4 mb-6 sm:mb-8">
               <button
                 onClick={() => navigate("/service")}
-                className="group relative overflow-hidden bg-gradient-to-r from-primary to-purple-600 px-8 py-3.5 rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                className="group relative overflow-hidden bg-gradient-to-r from-primary to-purple-600 px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-3.5 rounded-full text-white font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   Book Now
-                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
+                  <span className="hidden sm:inline-block">→</span>
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
 
               <button
                 onClick={() => navigate("/service")}
-                className="group border border-white/30 px-8 py-3.5 rounded-full text-white font-medium backdrop-blur-sm hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+                className="group border border-white/30 px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-3.5 rounded-full text-white font-medium text-sm sm:text-base backdrop-blur-sm hover:bg-white/10 hover:border-white/50 transition-all duration-300"
               >
                 <span className="flex items-center gap-2">
-                  Explore Services
-                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                  Explore
+                  <span className="hidden sm:inline-block">→</span>
                 </span>
               </button>
             </div>
 
-            
+            {/* Search Bar */}
             <div className="flex bg-white/10 backdrop-blur-xl rounded-full overflow-hidden border border-white/20 shadow-lg hover:bg-white/15 transition-all duration-300">
-              <div className="flex items-center pl-5 text-white/50">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
+              <div className="flex items-center pl-3 sm:pl-4 md:pl-5 text-white/50">
+                <span className="text-sm sm:text-base">🔍</span>
               </div>
               <input
                 value={searchQuery}
@@ -210,79 +202,69 @@ const Hero: React.FC = () => {
                   setSearchQuery(e.target.value)
                 }
                 onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-                placeholder="Search for services, treatments..."
-                className="flex-1 bg-transparent px-4 py-3.5 text-white placeholder-white/50 outline-none text-sm"
+                placeholder="Search services..."
+                className="flex-1 bg-transparent px-3 sm:px-4 py-2.5 sm:py-3 md:py-3.5 text-white placeholder-white/50 outline-none text-xs sm:text-sm"
               />
               <button
                 onClick={handleSearch}
-                className="bg-gradient-to-r from-primary to-purple-600 px-6 text-white text-sm font-medium hover:opacity-90 transition-all duration-300"
+                className="bg-gradient-to-r from-primary to-purple-600 px-4 sm:px-5 md:px-6 text-white text-xs sm:text-sm font-medium hover:opacity-90 transition-all duration-300"
               >
                 Search
               </button>
             </div>
 
-            
-            <div className="flex items-center gap-6 mt-8 text-white/40 text-xs">
+            {/* Trust Badges - Hidden on very small screens */}
+            <div className="hidden sm:flex items-center gap-4 md:gap-6 mt-6 md:mt-8 text-white/40 text-[10px] sm:text-xs">
               <span className="flex items-center gap-1">
-                <svg className="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
+                <span className="text-primary text-xs">✓</span>
                 Expert Stylists
               </span>
               <span className="flex items-center gap-1">
-                <svg className="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
+                <span className="text-primary text-xs">✓</span>
                 Premium Products
               </span>
               <span className="flex items-center gap-1">
-                <svg className="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
+                <span className="text-primary text-xs">✓</span>
                 5-Star Experience
               </span>
             </div>
           </div>
         </div>
 
-       
+        {/* Navigation Buttons - Hide on mobile */}
         <button
           onClick={() => goTo(current - 1)}
-          className="absolute left-5 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-md p-3 rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110"
+          className="hidden sm:flex absolute left-3 md:left-5 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-md p-2 md:p-3 rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110"
           aria-label="Previous slide"
         >
-          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
+          <span className="text-lg md:text-xl">←</span>
         </button>
 
         <button
           onClick={() => goTo(current + 1)}
-          className="absolute right-5 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-md p-3 rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110"
+          className="hidden sm:flex absolute right-3 md:right-5 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-md p-2 md:p-3 rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110"
           aria-label="Next slide"
         >
-          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
+          <span className="text-lg md:text-xl">→</span>
         </button>
 
-       
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+        {/* Dots - Responsive sizing */}
+        <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => goTo(i)}
               className={`transition-all duration-300 rounded-full ${
                 i === current
-                  ? "w-8 h-2 bg-gradient-to-r from-primary to-purple-500"
-                  : "w-2 h-2 bg-white/40 hover:bg-white/60"
+                  ? "w-6 sm:w-8 h-1.5 sm:h-2 bg-gradient-to-r from-primary to-purple-500"
+                  : "w-1.5 sm:w-2 h-1.5 sm:h-2 bg-white/40 hover:bg-white/60"
               }`}
               aria-label={`Go to slide ${i + 1}`}
             />
           ))}
         </div>
 
-      
+        {/* Progress Bar */}
         <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/10">
           <div 
             className="h-full bg-gradient-to-r from-primary to-purple-500 transition-all duration-5000 ease-linear"
@@ -307,6 +289,13 @@ const Hero: React.FC = () => {
         }
         .duration-5000 {
           transition-duration: 5000ms;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 640px) {
+          .animate-slide-down {
+            animation-duration: 0.3s;
+          }
         }
       `}</style>
     </div>
