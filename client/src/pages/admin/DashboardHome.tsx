@@ -48,43 +48,62 @@ const DashboardHome: React.FC = () => {
     fetchDashboardStats();
   }, []);
 
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      
-      
-      <div className="bg-white p-6 rounded-xl shadow">
-        <h3 className="text-gray-500 text-sm">Total Services</h3>
-        <p className="text-3xl font-bold mt-2">{stats.service}</p>
+ return (
+  <div className="p-4 sm:p-6 bg-gray-50 min-h-screen">
+    
+    {/* Header */}
+    <div className="mb-6">
+      <h2 className="text-xl font-semibold text-gray-800">
+        Dashboard
+      </h2>
+      <p className="text-sm text-gray-500">
+        Overview of your platform statistics
+      </p>
+    </div>
+
+    {/* Cards */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-sm hover:shadow-md transition">
+        <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+          Total Services
+        </p>
+        <p className="text-2xl font-semibold text-gray-800 mt-2">
+          {stats.service}
+        </p>
       </div>
 
-      
-      <div className="bg-white p-6 rounded-xl shadow">
-        <h3 className="text-gray-500 text-sm">Total Orders</h3>
-        <p className="text-3xl font-bold mt-2">{stats.allBooking}</p>
+      <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-sm hover:shadow-md transition">
+        <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+          Total Bookings
+        </p>
+        <p className="text-2xl font-semibold text-gray-800 mt-2">
+          {stats.allBooking}
+        </p>
       </div>
 
-      
-      <div className="bg-white p-6 rounded-xl shadow">
-        <h3 className="text-gray-500 text-sm">Pending Orders</h3>
-        <p className="text-3xl font-bold mt-2 text-yellow-500">
+      <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-sm hover:shadow-md transition">
+        <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+          Pending Bookings
+        </p>
+        <p className="text-2xl font-semibold text-yellow-500 mt-2">
           {stats.pendingBooking}
         </p>
       </div>
 
-   
-      <div className="bg-white p-6 rounded-xl shadow">
-        <h3 className="text-gray-500 text-sm">Total Users</h3>
-        <p className="text-3xl font-bold mt-2 text-primary">
+      <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-sm hover:shadow-md transition">
+        <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+          Total Users
+        </p>
+        <p className="text-2xl font-semibold text-primary mt-2">
           {stats.user}
         </p>
       </div>
 
-     
-
-
-
     </div>
-  );
+
+  </div>
+);
 };
 
 export default DashboardHome;
