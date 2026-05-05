@@ -44,8 +44,9 @@ const BookingPage = () => {
     }
   }, [serviceId]);
 
-  // Generate time slots in 12-hour format
-  const generateTimeSlots = (start: number, end: number, interval: number) => {
+  // Function to generate time slots (every 60 minutes from 9 AM to 6 PM)
+  
+  const generateTimeSlots = (start: number, end: number) => {
     const slots: string[] = [];
     for (let hour = start; hour <= end; hour++) {
       const ampm = hour >= 12 ? 'PM' : 'AM';
@@ -56,7 +57,7 @@ const BookingPage = () => {
     return slots;
   };
 
-  const timeSlots = generateTimeSlots(9, 18, 60);
+  const timeSlots = generateTimeSlots(9, 18);
 
   const onSubmitHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
