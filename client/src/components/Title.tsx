@@ -13,22 +13,20 @@ const Title: React.FC<TitleProps> = ({
 }) => {
   return (
     <div className={`px-4 pb-12 ${centered ? "text-center" : ""}`}>
-
-      {/* simple line */}
+     
       <div className={`flex ${centered ? "justify-center" : "justify-start"} mb-4`}>
-        <div className="w-12 h-0.5 bg-gray-400 rounded-full" />
+        <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-purple-500 rounded-full" />
       </div>
 
-      {/* title */}
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+     
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
         {title}
       </h2>
 
-      {/* subtitle */}
+      
       <p className={`text-base sm:text-lg text-gray-500 max-w-2xl ${centered ? "mx-auto" : ""}`}>
         {subTitle}
       </p>
-
     </div>
   );
 };
