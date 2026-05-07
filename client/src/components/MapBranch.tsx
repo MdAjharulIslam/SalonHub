@@ -121,15 +121,15 @@ const MapBranch: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center hover:shadow-xl transition-shadow duration-300">
-            <p className="text-4xl font-bold text-primary mb-2">50K+</p>
+            <p className="text-2xl font-semibold text-primary mb-2">50K+</p>
             <p className="text-gray-600">Happy Customers</p>
           </div>
           <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center hover:shadow-xl transition-shadow duration-300">
-            <p className="text-4xl font-bold text-purple-600 mb-2">100+</p>
+            <p className="text-2xl font-semibold text-purple-600 mb-2">100+</p>
             <p className="text-gray-600">Expert Stylists</p>
           </div>
           <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center hover:shadow-xl transition-shadow duration-300">
-            <p className="text-4xl font-bold text-pink-600 mb-2">25+</p>
+            <p className="text-2xl font-semibold text-pink-600 mb-2">25+</p>
             <p className="text-gray-600">Premium Services</p>
           </div>
         </div>
