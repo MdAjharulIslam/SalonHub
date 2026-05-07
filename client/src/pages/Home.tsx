@@ -4,7 +4,7 @@ import Hero from '../components/Hero'
 import TopRatedServices from '../components/TopRatedServices'
 import Category from '../components/Category'
 import MapBranch from '../components/MapBranch'
-import FAQ from '../components/Faq'
+import FAQ from '../components/FAQ'
 
 
 
